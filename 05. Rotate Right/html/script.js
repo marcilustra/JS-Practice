@@ -1,9 +1,13 @@
 function rotateString(targetString) {
+    //First we get the target by element ID
     let  target = document.getElementById(targetString);
-    let textNode = target.childNodes[0];
-    let text = textNode.data;
+
+    //Assign the innerHTML to a variable
+    let innerText = target.innerHTML;
+
+    //Repeatedly call the function with an interval to rotate the string left going right
     setInterval( function(){
-        text = text[text.length - 1] + text.substring(0, text.length - 1);
-        textNode.data = text;
-    }, 1000);
+        innerText = innerText[innerText.length - 1] + innerText.substring(0, innerText.length - 1);
+        target.textContent = innerText;
+    }, 150);
 }
